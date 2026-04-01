@@ -1,14 +1,16 @@
 import {useDispatch, useSelector} from 'react-redux'
 import { addToDo, indetify} from "./slices/toDoSlice.tsx";
-import { useState} from "react";
+import { useState, } from "react";
 //import {IArr} from "./slices/toDoSlice.ts";
 
 
-export const ToDo = () =>{
+export const ToDo = () => {
+ 
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-expect-error
     const arr = useSelector(state => state.toDo.arr);
     const dispatch = useDispatch();
-   // const text = useSelector(state => state.toDo.text);
-    //const ident = useSelector(state => state.toDo.idetifi)
+
 
     const [input, setInput] = useState('');
 
@@ -25,14 +27,14 @@ export const ToDo = () =>{
 
     return (
         <>
-            <form onSubmit={ handleInputChange }>
+            <form onSubmit={handleInputChange}>
                 <input value={input} onChange={(e) => setInput(e.currentTarget.value)}></input>
                 <button type="submit">Save</button>
 
             </form>
-            <div  style={{padding: '10px'}}>{
+            <div style={{padding: '10px'}}>{
 
-                arr.map(elem => {
+                arr.map((elem: { id:number; indetifi: boolean; text: string})  => {
                     return(
                         <div key={elem.id} style={{ display:'flex' ,padding: 'auto', color:elem.indetifi ? 'green' : 'red', border: '1px solid black',
                             marginTop: '5px' }}>
