@@ -1,14 +1,12 @@
 import {useDispatch, useSelector} from 'react-redux'
-import { addToDo, indetify} from "./slices/toDoSlice.tsx";
+import {addToDo, type IArr, indetify} from "./slices/toDoSlice.tsx";
 import { useState, } from "react";
 //import {IArr} from "./slices/toDoSlice.ts";
 
 
 export const ToDo = () => {
- 
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-expect-error
-    const arr = useSelector(state => state.toDo.arr);
+
+    const arr = useSelector((state: {toDo: { arr: IArr[] } }) => state.toDo.arr);
     const dispatch = useDispatch();
 
 
