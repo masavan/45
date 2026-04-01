@@ -1,6 +1,8 @@
+/*
 //import {createStore} from "@reduxjs/toolkit";
 import { configureStore } from '@reduxjs/toolkit'
 import {useSelector} from "react-redux";
+import type {RootState} from "@reduxjs/toolkit/query";
 
 
 
@@ -11,8 +13,8 @@ const initialState = {
 const INCREMENT = 'incremented';
 const DECREMENT = 'decremented';
 
-// @ts-ignore
-const counter = (state = initialState, action) =>{
+
+const counter = (state = initialState, action:any ) =>{
     switch(action.type){
         case INCREMENT:
             return ({ ...state,
@@ -44,7 +46,7 @@ const decrement = () => store.dispatch({type: DECREMENT});
 
 export const Batb = () => {
 
-    const currentValue = useSelector(state => state.value);
+    const currentValue = useSelector((state: RootState) => state.value);
 
 
     return(
@@ -54,4 +56,4 @@ export const Batb = () => {
             <button onClick={decrement}>-1</button>
         </>
     )
-}
+}*/
