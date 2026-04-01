@@ -9,7 +9,7 @@ export interface IArr {
 }
 
 //const [text, setText] = useState('')
-export const toDoSlice = createSlice({
+export const toDoSlice  = createSlice({
     name:'to-do',
     initialState:{
         arr:[] as IArr[],

@@ -6,7 +6,7 @@ import { useState, } from "react";
 
 export const ToDo = () => {
 
-    const arr = useSelector((state: {toDo: { arr: IArr[] } }) => state.toDo.arr);
+    const arr = useSelector((state:  {toDo: { arr: IArr[] } }) => state.toDo.arr);
     const dispatch = useDispatch();
 
 
